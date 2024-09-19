@@ -1,0 +1,85 @@
+body {
+    font-family: Helvetica, sans-serif;
+    margin: 10px;
+    padding: 10px;
+    font-size: 13px;
+  }
+  #gantt {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    box-sizing: border-box;
+    /* Assurez-vous que le conteneur gantt a une hauteur suffisante pour afficher tous les éléments */
+    min-height: 500px; /* Exemple de hauteur minimum, ajustez en fonction de vos besoins */
+  }
+  .gantt-bar, .gantt-point {
+    position: absolute;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    height: 22px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    line-height: 22px;
+  }
+
+  .month-label {
+    position: absolute;
+    color: #555;
+    font-weight: light;
+    font-size: 15px;
+    background-color: transparent; /* Peut être rendu transparent ou avec une couleur de fond */
+    padding: 10px 15px;
+    line-height: 20px;
+    white-space: nowrap; /* Assurez-vous que les labels ne passent pas à la ligne */
+  }
+
+  .gantt-label {
+    position: absolute;
+    color: black;
+    text-align: left;
+    white-space: nowrap;
+    margin-left: 3px; /* Space between point and label */
+    margin-top: 2px; /* Adjusted to align with the center of the point */
+  }
+  
+  .gantt-point {
+    position: absolute;
+    width: 15px; 
+    height: 15px; 
+    border-radius: 50%;
+    background-color: black;
+}
+
+div#month-labels-container {
+    background-color: #e0e0e0; /* Ou toute autre couleur de votre choix */
+  }
+
+  #month-labels-container {
+    width: 100%;
+    margin-bottom: 40px;
+    position: relative;
+    width: 100%;
+    z-index: 3; /* Assurez-vous que les labels de mois sont au-dessus des événements et des séparateurs */  }
+  
+  #events-container {
+    position: relative;
+    width: 100%;
+    background-color: #f9f9f9;
+    z-index: 2; /* Plus élevé que les séparateurs pour que les événements apparaissent au-dessus */
+  }
+  
+  #separators-container {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    z-index: 1; /* Plus bas pour que les séparateurs soient sous les barres d'événements */
+    pointer-events: none;
+  }
+  
+  .month-separator {
+    position: absolute;
+    border-left: 1px dashed #bbb;
+    top: 0;
+    bottom: 0;
+  }
